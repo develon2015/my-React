@@ -1,0 +1,19 @@
+{
+  "name": "my-React",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/develon2015/my-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/develon2015/my-React/issues"
+  },
+  "homepage": "https://github.com/develon2015/my-React#readme"
+}
