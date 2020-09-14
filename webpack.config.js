@@ -8,17 +8,18 @@ const DIR_DIST = path.resolve(DIR_PROJECT,'dist');
 const CONFIG = {
     entry: {
         index: path.resolve(DIR_SRC, 'index.js'),
-        exlib: path.resolve(DIR_SRC, 'exlib.js'),
+        // exlib: path.resolve(DIR_SRC, 'exlib.js'),
     },
     output: {
-        filename: 'js/[name].js',
+        filename: '[name].js',
         path: DIR_DIST,
     },
     module: {
         rules: [
             // { test: /\.vue$/, use: 'vue-loader' },
-            { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
+            { test: /\.css$/, use: ['style-loader', 'css-loader?modules'] },
             { test: /\.(html|png|jpg|ico)$/, use: 'file-loader?context=src&name=[path][name].[ext]' },
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=@babel/env&presets[]=@babel/react' },
         ],
     },
     // plugins: [new VueLoaderPlugin()],
@@ -30,6 +31,11 @@ const CONFIG = {
     },
     // target: 'electron-renderer', // 避免打包'electron'
     // externals: { 'jquery': '$' }, // package-name在前
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'two.js': 'Two',
+    },
 };
 
 function config(env = {}, argv) { // 当webpack命令没有指定--env参数时, env未定义, 可以设置默认值env = {}, 也可以在读成员时加逻辑: env && env.custom_param
