@@ -1,0 +1,8 @@
+.button {
+    position: relative;
+    background: green;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+}

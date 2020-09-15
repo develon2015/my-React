@@ -7,7 +7,7 @@ class Index extends Component {
     render() {
         return (
             <h1>
-                Index of Application
+                Test of Application
             </h1>
         );
     }
