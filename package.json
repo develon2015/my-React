@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js --env.production",
+    "rebuild": "webpack --config webpack.config.js --env.production --env.rebuild",
     "dev": "webpack-dev-server --open"
   },
   "repository": {
