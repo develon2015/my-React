@@ -28,6 +28,8 @@ const CONFIG = {
     devServer: {
         contentBase: DIR_DIST,
         https: false,
+        disableHostCheck: true,
+        public: '0.0.0.0:0',
     },
     // target: 'electron-renderer', // 避免打包'electron'
     // externals: { 'jquery': '$' }, // package-name在前
@@ -56,6 +58,9 @@ function config(env = {}, argv) { // 当webpack命令没有指定--env参数时,
                 child_process.execSync(`rm -rf '${DIR_DIST}'`);
             }
         } catch (error) { }
+    }
+    if (env && env.localhost) {
+        delete CONFIG.devServer.public;
     }
     return CONFIG;
 }

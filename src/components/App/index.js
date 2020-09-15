@@ -7,21 +7,19 @@ import Test from '../Test';
 
 // 由于App不是一个通用组件, 不需要继承Component类, 直接导出一个React组件即可
 export default App => (
-    <div>
+    <Router>
         <div>
-            <Title>
-                <Button onClick={function () { 
-                    console.log(this);
-                }}>Home</Button>
-            </Title>
-        </div>
-        <div>
-            <Router>
+            <div>
+                <Title>
+                    <Link to="/" type="div"><Button>Home</Button></Link>
+                </Title>
+            </div>
+            <div>
                 <Switch>
                     <Route path="/test"><Test /></Route>
                     <Route path="/"><Index /></Route>
                 </Switch>
-            </Router>
+            </div>
         </div>
-    </div>
+    </Router>
 );

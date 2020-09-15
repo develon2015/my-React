@@ -1,4 +1,5 @@
 import { createElement as e, Component, } from 'react';
+import css from './style.css';
 
 class Index extends Component {
     constructor(props) {
@@ -6,9 +7,9 @@ class Index extends Component {
     }
     render() {
         return (
-            <h1>
-                Index of Application
-            </h1>
+            <div className={css.index}>
+                <h1>Index of Application</h1>
+            </div>
         );
     }
 }
