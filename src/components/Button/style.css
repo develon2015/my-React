@@ -11,3 +11,8 @@
     min-width: 80px;
     text-align: center;
 }
+
+.button {
+    margin: 2px;
+    padding: 8px 20px;
+}
