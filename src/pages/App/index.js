@@ -1,4 +1,4 @@
-import { HashRouter as Router, Switch, Route, Link, } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link, useHistory, } from 'react-router-dom';
 import './style.css';
 import Index from '@/pages/Index';
 import Title from '@/components/Title';
@@ -13,19 +13,27 @@ const map_route = ReactPages.map((it, index) => (
     </Route>
 ));
 
+/** 应用程序头部 */
+function Header() {
+    const history = useHistory();
+    return (
+        <div>
+            <Title>
+                <Button onClick={() => history.push("/")}><Link to="/" type="div">React Center</Link></Button>
+            </Title>
+        </div>
+    );
+}
+
 // 由于App不是一个通用组件, 不需要继承Component类, 直接导出一个React组件即可
 export default (
     <Router>
         <div>
-            <div>
-                <Title>
-                    <Button><Link to="/" type="div">React Center</Link></Button>
-                </Title>
-            </div>
+            <Header />
             <div>
                 <Switch>
                     {map_route}
-                    <Route path="/">{ Index }</Route>
+                    <Route path="/">{Index}</Route>
                 </Switch>
             </div>
         </div>
