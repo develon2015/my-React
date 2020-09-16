@@ -1,4 +1,6 @@
-.button {
+/* Button的子元素可以是Link */
+.button, .button > a {
+    display: inline-block;
     position: relative;
     background: green;
     color: white;
@@ -6,4 +8,6 @@
     cursor: pointer;
     user-select: none;
     text-decoration: none;
+    min-width: 80px;
+    text-align: center;
 }

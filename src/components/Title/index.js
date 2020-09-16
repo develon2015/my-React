@@ -1,7 +1,7 @@
 import { Component, } from 'react';
 import css from './style.css';
 
-class Title extends Component {
+export default class extends Component {
     constructor(props) {
         super(props);
     }
@@ -15,5 +15,3 @@ class Title extends Component {
         );
     }
 }
-
-export default Title;

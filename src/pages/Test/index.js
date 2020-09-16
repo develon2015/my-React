@@ -1,6 +1,6 @@
 import { createElement as e, Component, } from 'react';
 
-class Index extends Component {
+export default class extends Component {
     constructor(props) {
         super(props);
     }
@@ -12,5 +12,3 @@ class Index extends Component {
         );
     }
 }
-
-export default Index;
