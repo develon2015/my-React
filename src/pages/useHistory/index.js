@@ -4,7 +4,9 @@ import Button from '../../components/Button';
 import Code from '@/components/Code';
 import { createElement } from 'react';
 
-const code = `
+const code = 
+`import { useHistory, } from 'react-router-dom';
+
 return (
         <div className={css.container}>
             <div className={css.content}>
@@ -20,8 +22,7 @@ return (
                 <Code>{code}</Code>
             </div>
         </div>
-    );
-`;
+    );`;
 
 export default () => {
     return (
@@ -35,7 +36,7 @@ export default () => {
                 })}
             </div>
             <div>
-                <h1>实现方式:</h1>
+                <h1>代码实现:</h1>
                 <Code>{code}</Code>
             </div>
         </div>
