@@ -7,7 +7,7 @@ export default class extends Component {
     }
     render() {
         return (
-            <div className={css.button} onClick={() => this.props.onClick?.apply(this)}>
+            <div className={css.button} onClick={() => this.props.onClick?.()}>
                 {this.props.children}
             </div>
         );

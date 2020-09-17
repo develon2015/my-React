@@ -1,6 +1,7 @@
 .title {
     position: relative;
-    min-height: 80px;
+    height: 80px;
+    overflow: hidden;
     background: green;
     color: white;
     font-size: 32px;
