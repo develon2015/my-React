@@ -7,7 +7,12 @@ export default class extends Component {
     }
     render() {
         return (
-            <div className={css.button} onClick={() => this.props.onClick?.()}>
+            <div className={css.button} onClick={() => this.props.onClick?.()}
+                style={{
+                    color: this.props.color,
+                    boxShadow: this.props.color ? `0 0 0 2px ${this.props.color}` : null
+                }}
+            >
                 {this.props.children}
             </div>
         );

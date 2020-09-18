@@ -19,7 +19,7 @@ function Header() {
     return (
         <div>
             <Title>
-                <Button onClick={() => history.push("/")}><Link to="/" type="div">React Center</Link></Button>
+                <Button onClick={() => history.push("/")} color="white">React Center</Button>
             </Title>
         </div>
     );

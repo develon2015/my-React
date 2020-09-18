@@ -4,6 +4,7 @@ export default (props) => {
     let line_number = 0;
     // 空格和<>等符号替换为html转义字符
     let html = props.children
+        .replaceAll('&', '&amp;') // 先替换&符号
         .replaceAll('<', '&lt;').replaceAll('>', '&gt;')
         .replaceAll(' ', '&nbsp;')
         ;

@@ -5,9 +5,15 @@ function Father() { return 'Father'; }
 
 function Child() { return 'Child'; }
 
-function whatsJSX() { return (<Father><Child /></Father>); }
+function whatsJSX() {
+    // Child可以是类组件, 也可以是函数组件
+    return (<Father><Child /></Father>);
+}
 
-function whatsJSX2() { return (<Father>{Child}</Father>); }
+function whatsJSX2() {
+    // Child必须是React元素
+    return (<Father>{Child}</Father>);
+}
 
 export default (
     <div className={css.container}>
