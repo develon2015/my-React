@@ -9,3 +9,15 @@
     /** 允许断字 */
     word-break: break-all;
 }
+.line-number {
+    user-select: none;
+    color: pink;
+    display: inline-block;
+    width: 40px;
+}
+.red {
+    color: red;
+}
+.yellow {
+    color: yellow;
+}

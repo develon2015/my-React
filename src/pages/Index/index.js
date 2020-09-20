@@ -4,7 +4,7 @@ import { Pages, } from '@/pages/router';
 import Button from '@/components/Button';
 
 const map_route = Pages.map((page, index) => (
-    <Link to={'/' + page}  key={index}><Button>{ page }</Button></Link>
+    <Link to={'./' + page}  key={index}><Button>{ page }</Button></Link>
 ));
 
 export default (

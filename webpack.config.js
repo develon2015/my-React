@@ -13,6 +13,7 @@ const CONFIG = {
     output: {
         filename: '[name].js',
         path: DIR_DIST,
+        chunkFilename: 'async/module-[name]-[id].js', // 此选项确定非入口块文件的名称
     },
     module: {
         rules: [
@@ -67,6 +68,7 @@ function config(env = {}, argv) { // 当webpack命令没有指定--env参数时,
     }
     if (env && env.localhost) {
         delete CONFIG.devServer.public;
+        delete CONFIG.devtool;
     }
     return CONFIG;
 }

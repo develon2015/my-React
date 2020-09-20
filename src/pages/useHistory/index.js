@@ -1,6 +1,6 @@
 import css from './style.css';
 import { useHistory, } from 'react-router-dom';
-import Button from '../../components/Button';
+import Button from '@/components/Button';
 import Code from '@/components/Code';
 import { createElement } from 'react';
 import code from '!raw-loader!.'
