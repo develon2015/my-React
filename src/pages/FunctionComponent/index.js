@@ -8,8 +8,9 @@ export default (
     <div className={css.container}>
         <div className={css.content}>
             <Button onClick={() => {
-                //
-                Alert();
+                // 调用Alert函数
+                Alert(<h1>1</h1>);
+                Alert(<h1> 2</h1>);
             }}>提示框</Button>
         </div>
     </div>

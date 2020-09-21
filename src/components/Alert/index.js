@@ -10,18 +10,23 @@ function getForegroundID() {
     return ++i;
 }
 
-function Alert() {
+function Alert(props) {
+    console.log(props);
     return (
-        <div>
-            Hello
+        <div className={css.container}>
+            <div className={css['alert-container']}>
+                <div className={css['alert-content']}>
+                    {props.children}
+                </div>
+            </div>
         </div>
     );
 }
 
-export default (props) => {
+export default (alert) => {
     let frame = document.createElement('div');
     frame.classList.add(css.frame);
     frame.id = `alert-${getForegroundID()}`;
     document.body.appendChild(frame);
-    ReactDOM.render(Alert(), frame);
+    ReactDOM.render(<Alert>{ alert }</Alert>, frame);
 }
