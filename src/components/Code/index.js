@@ -23,8 +23,11 @@ export default (props) => {
     }
     // 高亮注释
     let final_html = lined_html
-        .replace(/(\/\/.*?)(?:<br>|$)/g, `<span class="${css.yellow}">$1</span><br>`)
-        .replace(/(\/\*.*?\*\/)/g, `<span class="${css.yellow}">$1</span>`)
+        // 单行注释
+        .replace(/(\/\/.*?)(?:<br>|$)/g, `<span class="${css['single-comment']}">$1</span><br>`)
+        // 多行注释
+        .replace(/(\/\*.*?\*\/)/g, `<span class="${css['multi-comment']}">$1</span>`)
+        .replace(/(import(&nbsp;)+.*?<br>)/g, `<span class="${css.import}">$1</span>`)
         ;
     return (
         <span className={css.code} dangerouslySetInnerHTML={{ __html: final_html }}

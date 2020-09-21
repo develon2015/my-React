@@ -1,6 +1,6 @@
 .code {
     background: black;
-    color: whitesmoke;
+    color: #fd971f;
     padding: 20px 10px;
     display: block;
     text-align: left;
@@ -11,13 +11,16 @@
 }
 .line-number {
     user-select: none;
-    color: pink;
+    color: #ae81ff;
     display: inline-block;
     width: 40px;
 }
-.red {
-    color: red;
+.single-comment {
+    color: #a6e22e;
 }
-.yellow {
-    color: yellow;
+.multi-comment {
+    color: #66d9ef;
+}
+.import {
+    color: #f74449;
 }

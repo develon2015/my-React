@@ -1,5 +1,5 @@
 import { HashRouter as Router, Switch, Route, Link, useHistory, } from 'react-router-dom';
-import './style.css';
+import css from './style.css';
 import Index from '@/pages/Index';
 import Title from '@/components/Title';
 import Button from '@/components/Button';
@@ -19,7 +19,7 @@ function Header() {
     return (
         <div>
             <Title>
-                <Button onClick={() => history.push("/")} color="white">React Center</Button>
+                <div className={css.head} onClick={() => history.push("/")}>React Center</div>
             </Title>
         </div>
     );
@@ -28,7 +28,7 @@ function Header() {
 // 由于App不是一个通用组件, 不需要继承Component类, 直接导出一个React组件即可
 export default (
     <Router>
-        <div>
+        <div className={css.app}>
             <Header />
             <div>
                 <Switch>

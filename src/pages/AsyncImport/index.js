@@ -20,7 +20,7 @@ class Demo extends Component {
                         import(
                             // 指定文件名, 准确的说是[name]变量, 有重名的风险, 在Webpack配置中再指定[id]变量
                             /* webpackChunkName: "AsyncImport-source-code" */
-                            '!raw-loader!.' // .表示当前js文件
+                            '!raw-loader!.' // .表示当前js文件(当前目录的index.js文件)
                         ).then(({ default: text }) => {
                             this.setState({ code: text });
                         });

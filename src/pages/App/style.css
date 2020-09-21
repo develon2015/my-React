@@ -9,3 +9,9 @@ body {
 h1 {
     margin: 0;
 }
+.head {
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}

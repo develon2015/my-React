@@ -2,7 +2,8 @@
     position: relative;
     height: 80px;
     overflow: hidden;
-    background: green;
+    background: #eb3c70;
+    background: #a6e22e;
     font-size: 32px;
 }
 .container {
