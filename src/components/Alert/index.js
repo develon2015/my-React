@@ -1,17 +1,12 @@
 import css from './style.css';
 import ReactDOM from 'react-dom';
 
-const config = {
-    title: 'Good',
-};
-
 let i = 0;
 function getForegroundID() {
     return ++i;
 }
 
 function Alert(props) {
-    console.log(props);
     return (
         <div className={css.container}>
             <div className={css['alert-container']}>
@@ -29,4 +24,5 @@ export default (alert) => {
     frame.id = `alert-${getForegroundID()}`;
     document.body.appendChild(frame);
     ReactDOM.render(<Alert>{ alert }</Alert>, frame);
+    return frame;
 }

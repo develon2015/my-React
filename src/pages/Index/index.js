@@ -5,12 +5,14 @@ import Button from '@/components/Button';
 import Tag from '@/components/Tag';
 
 const map_route = Pages.map((page, index) => (
-    <Link to={'./' + page}  key={index}><Button>{ page }</Button></Link>
+    <Link to={'./' + page} key={index}><Button>{page}</Button></Link>
 ));
 
 export default (
     <div className={css.index}>
-        <Tag>Index of Application</Tag>
+        <div style={{ margin: '20px 0' }}>
+            <Tag>Index of Application</Tag>
+        </div>
         {map_route}
     </div>
 );
