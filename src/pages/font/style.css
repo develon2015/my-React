@@ -10,7 +10,7 @@
 }
 @font-face {
     font-family: custom-font;
-    src: url(!file-loader?name=font/[name].[ext]!./楷体.woff);
+    src: url(!file-loader?name=font/[name].[ext]!./spring.woff);
 }
 @font-face {
     font-family: "行体";

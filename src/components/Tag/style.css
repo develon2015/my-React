@@ -7,7 +7,7 @@
     background: #ee3f4d;
     color: white;
     border-bottom-right-radius: 80px;
-    width: fit-content;
+    width: max-content;
     margin: 0px 0px;
     font-weight: bold;
 }
