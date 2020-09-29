@@ -5,11 +5,13 @@ import Title from '@/components/Title';
 import Button from '@/components/Button';
 import { Pages, ReactPages, } from '@/pages/router';
 
-const map_route = ReactPages.map((it, index) => (
+const map_route = ReactPages.map((el_or_func, index) => (
     <Route key={index} path={'/' + Pages[index]}>
         {/* 页面不是组件, 导出元素就不需要实例化Component对象再调用render函数 */}
         {/* {new it().render()} */}
-        {it}
+        {/* 按理说这里每个页面的导出, 必须是React元素 */}
+        {/* 但是经过验证, 函数组件也是可以的(严格地说应该是一个返回组件的函数), 无须作为函数调用, 这确实非常方便 */}
+        {el_or_func}
     </Route>
 ));
 

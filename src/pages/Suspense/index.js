@@ -1,11 +1,13 @@
-import { Component, lazy, Suspense, createElement, useRef } from 'react';
+import { Component, lazy, Suspense, createElement, useRef, createRef } from 'react';
 import css from './style.css';
+import Button from '@/components/Button';
+import ReactDOM from 'react-dom';
 
 // 单例
- let fetchNameByInternet = () => new Promise(resolve => {
-     console.log('网络请求开始了, 将于4秒后完成');
-     setTimeout(() => resolve('develon'), 4000);
- });
+let fetchNameByInternet = () => new Promise(resolve => {
+    console.log('网络请求开始了, 将于4秒后完成');
+    setTimeout(() => resolve('develon'), 4000);
+});
 
 let resolved = false; // 标志网络请求是否已完成
 let name = "Don't get the Name"; // 存储从网络获取的用户名
@@ -29,10 +31,34 @@ function FunctionComponent(props) {
     return <h2>用户名: {name}</h2>
 }
 
-export default (
-    <div id={css.app}>
+function loadUserName() {
+    return (
         <Suspense fallback={<h1>正在联网获取用户名...</h1>}>
-            <FunctionComponent/>
+            <FunctionComponent />
         </Suspense>
-    </div>
-);
+    );
+}
+
+let div_name = createRef();
+function refresh() {
+    resolved = false; // 强制模拟请求
+    ReactDOM.render(loadUserName(), div_name.current);
+}
+
+export default route => {
+    setTimeout(() => refresh(), 0);
+    return (
+        <div id={css.app} className={css.container}>
+            <div className={[css.center].join(' ')}>
+                <div ref={div_name} style={{ textAlign: 'center' }}>
+                    {/* 占位 */}
+                </div>
+                <div className={[css.container].join(' ')}>
+                    <div className={[css.center].join(' ')}>
+                        <Button onClick={refresh}>刷新</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
