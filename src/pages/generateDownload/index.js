@@ -23,11 +23,24 @@ class Demo extends Component {
             /* 在每次调用 createObjectURL() 方法时，都会创建一个新的 URL 对象，即使你已经用相同的对象作为参数创建过。
              * 当不再需要这些 URL 对象时，每个对象必须通过调用 URL.revokeObjectURL() 方法来释放。
              */
-            case '使用Blob => ObjectURL': {
+            case '使用Blob创建ObjectURL本地链接': {
                 let blob = new Blob([text, 123], { type: 'application/octet-stream' });
                 console.log(blob); // Blob { size: 12, type: "application/octet-stream" }
                 a.href = URL.createObjectURL(blob);
                 console.log(a.href); // 一个以"blob:"开头的URL地址
+                break;
+            }
+            case '使用FileReader将Blob编码为Data URLs': {
+                let reader = new FileReader();
+                reader.addEventListener('loadend', event => {
+                    a.href = event.target.result;
+                    console.log(a.href); // Data URLs
+                    // 这里是异步的, 所以要重复操作
+                    a.download = '文件.end'; // 8位位组八位字节流可以自定义文件后缀
+                    a.click(); // 遗憾的是, 无法感知文件下载完成事件, 从而无法主动释放Blob对象创建的ObjectURL
+                });
+                let blob = new Blob([text], { type: 'application/octet-stream' });
+                reader.readAsDataURL(blob);
                 break;
             }
         }
@@ -39,7 +52,8 @@ class Demo extends Component {
             <div>
                 <Button onClick={_ => this.handleClick(_)}>使用URI编码文本后再base64编码的Data URLs</Button>
                 <Button onClick={_ => this.handleClick(_)}>使用utf-8编码文本的Data URLs</Button>
-                <Button onClick={_ => this.handleClick(_)}>使用Blob =&gt; ObjectURL</Button>
+                <Button onClick={_ => this.handleClick(_)}>使用Blob创建ObjectURL本地链接</Button>
+                <Button onClick={_ => this.handleClick(_)}>使用FileReader将Blob编码为Data URLs</Button>
             </div>
         );
     }
