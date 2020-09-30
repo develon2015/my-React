@@ -3,6 +3,7 @@ const Pages = ['Keyframes', 'WhatsJSX', 'useHistory', 'AsyncImport', 'font', 'Fu
     'Suspense',
     'Suspense2',
     'iframe',
+    'generateDownload',
 ];
 const ReactPages = Pages.map(page => require(`@/pages/${page}`).default);
 

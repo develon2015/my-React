@@ -1,6 +1,6 @@
 #app {
     min-height: calc(100vh - 80px);
-    background: mediumseagreen;
+    background: white;
 }
 .container {
     position: relative;
