@@ -15,7 +15,7 @@ function whatsJSX2() {
     return (<Father>{Child}</Father>);
 }
 
-export default (
+export default () => (
     <div className={css.container}>
         <div className={css.content}>
             <p>

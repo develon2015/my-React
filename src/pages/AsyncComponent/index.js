@@ -14,7 +14,7 @@ const AsyncComponent = lazy(() => new Promise((resolve, reject) => {
     });
 }));
 
-export default (
+export default () => (
     <div id={css.app}>
         <Suspense fallback={<h1>正在lazy加载异步组件...</h1>}>
             <AsyncComponent />

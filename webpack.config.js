@@ -20,7 +20,16 @@ const CONFIG = {
             // { test: /\.vue$/, use: 'vue-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader?modules'] },
             { test: /\.(html|png|jpg|ico)$/, use: 'file-loader?context=src&name=[path][name].[ext]' },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=@babel/env&presets[]=@babel/react' },
+            // { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=@babel/env&presets[]=@babel/react' }, // Babel
+            {
+                test: /\.js$/, exclude: /node_modules/, loader: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/env', '@babel/react'],
+                        plugins: ['@babel/plugin-proposal-class-properties'],
+                    }
+                }
+            }, // Babel
         ],
     },
     // plugins: [new VueLoaderPlugin()],

@@ -5,9 +5,9 @@ export default (props) => {
     // 空格和<>等符号替换为html转义字符
     let html = props.children
         .replace(/&/g, '&amp;') // 先替换&符号
-        .replace(/</g, '&lt;').replaceAll(/>/g, '&gt;')
-        .replaceAll(/ /g, '&nbsp;')
-        .replaceAll(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;') // 制表符替换为4个空格
+        .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/ /g, '&nbsp;')
+        .replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;') // 制表符替换为4个空格
         ;
     // 字符串中的换行替换为<br>, 并添加行号
     let unline_html = html.split(/\r\n|\n/);

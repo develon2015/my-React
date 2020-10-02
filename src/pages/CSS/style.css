@@ -1,0 +1,45 @@
+.demo {
+    position: relative;
+    min-height: 20px;
+    margin: 20px;
+    text-align: center;
+}
+.button {
+    display: inline-block;
+    position: relative;
+    width: 480px;
+    height: 120px;
+    color: mediumvioletred;
+    border: 3px solid rgb(40, 194, 40);
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* button的第一个子元素使用一个绝对定位的背景 */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(40, 194, 40);
+    transition: .2s all;
+}
+.button:hover::before {
+    width: 100%;
+}
+.button:hover * {
+    color: white;
+}
+.button > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 80px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all;
+    user-select: none;
+}

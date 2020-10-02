@@ -1,7 +1,7 @@
 import css from './style.css';
 import Code from '@/components/Code';
 
-export default (
+export default () => (
     <div className={css.container}>
         <div className={css.content}>
             <h1 className={css.h1}>Hello</h1>

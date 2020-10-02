@@ -59,7 +59,7 @@ class Demo extends Component {
     }
 }
 
-export default (
+export default () => (
     <div>
         <Demo />
         <Code>{require('!raw-loader!.').default}</Code>

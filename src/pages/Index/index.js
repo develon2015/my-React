@@ -8,7 +8,7 @@ const map_route = Pages.map((page, index) => (
     <Link to={'./' + page} key={index}><Button>{page}</Button></Link>
 ));
 
-export default (
+export default route => (
     <div className={css.index}>
         <div style={{ margin: '20px 0' }}>
             <Tag>Index of Application</Tag>

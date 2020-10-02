@@ -74,6 +74,6 @@ class Demo extends Component {
     }
 }
 
-export default (
+export default () => (
     <Demo />
 );
