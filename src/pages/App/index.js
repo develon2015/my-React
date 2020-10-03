@@ -4,7 +4,9 @@ import Index from '@/pages/Index';
 import Title from '@/components/Title';
 import Button from '@/components/Button';
 import { Pages, ReactPages, } from '@/pages/router';
-import { Suspense } from 'react';
+import { Component, Suspense } from 'react';
+import ReactDOM from 'react-dom';
+import Alert from '@/components/Alert';
 
 // 页面全部打包到index.js中
 // const map_route = ReactPages.map((el_or_func, index) => (
@@ -23,7 +25,8 @@ const map_route = ReactPages.map((LazyComponent, index) => (
             // 如果Route的children是一个函数, 则可以接受route参数
             route => {
                 return (
-                    <Suspense fallback={<h1>加载中...</h1>}>
+                    // <Suspense fallback={<h1>加载中...</h1>}>
+                    <Suspense fallback={<Loadding />}>
                         {/* LazyComponent是lazy函数返回的组件 */}
                         <LazyComponent></LazyComponent>
                     </Suspense>
@@ -32,6 +35,22 @@ const map_route = ReactPages.map((LazyComponent, index) => (
         }
     </Route>
 ));
+
+class Loadding extends Component {
+    componentDidMount() {
+        this.alert = Alert(<h2 style={{ padding: '20px', color: 'mediumseagreen' }}>加载中...</h2>);
+    }
+    componentWillUnmount() {
+        setTimeout(() => {
+            this.alert.remove();
+        }, 600); // 故意延迟, 务必让各位看官仔仔细细看个明白
+    }
+    render() {
+        return (
+            null
+        );
+    }
+}
 
 /** 应用程序头部 */
 function Header() {
