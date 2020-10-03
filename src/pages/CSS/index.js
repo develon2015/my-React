@@ -8,6 +8,12 @@ function Transition() {
             <div className={css['button']}>
                 <div>Like this</div>
             </div>
+            <div className={css['button']}>
+                <div>Real told You, I Love React.js</div>
+            </div>
+            <div className={css['button']}>
+                <div style={{ width: '200px' }}>OK</div>
+            </div>
         </div>
     );
 }
