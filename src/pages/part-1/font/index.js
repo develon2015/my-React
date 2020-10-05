@@ -1,5 +1,5 @@
 import css from './style.css';
-import Button from '../../components/Button';
+import Button from '@/components/Button';
 import Code from '@/components/Code';
 import Title from '@/components/Title';
 import { createElement, Component, createRef, } from 'react';

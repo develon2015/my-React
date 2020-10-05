@@ -12,6 +12,7 @@
     border-radius: 180px;
     overflow: hidden;
     white-space: nowrap;
+    margin: 1px;
 }
 /* button的第一个子元素使用一个绝对定位的背景 */
 .button::before {
@@ -30,8 +31,8 @@
 }
 .button > span, .button > div {
     position: relative;
-    min-height: 128px;
-    font-size: 80px;
+    min-height: 28px;
+    font-size: 20px;
     cursor: pointer;
     /* 弹性居中 */
     display: flex;

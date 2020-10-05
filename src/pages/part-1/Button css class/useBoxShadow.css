@@ -1,0 +1,47 @@
+.button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    font-size: 28px;
+    box-shadow: 0 0 1px 1px mediumseagreen;
+    border-radius: 40px;
+    color: mediumseagreen;
+    margin: 1px;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    background: mediumseagreen;
+    transition: .2s width;
+    border-radius: 40px;
+}
+
+/**
+ * 选择.button所有子代中的第一个元素, 即按钮children:
+ * .button > *:first-child {
+ * 星号可以省略
+ */
+.button > :first-child {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transition: .2s color;
+    padding: 6px 40px;
+    white-space: nowrap;
+}
+
+/* .button:hover渐变 */
+.button:hover > :first-child {
+    color: white;
+}
+
+.button:hover::before {
+    width: 100%;
+}

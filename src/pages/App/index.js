@@ -43,7 +43,7 @@ class Loadding extends Component {
     componentWillUnmount() {
         setTimeout(() => {
             this.alert.remove();
-        }, 600); // 故意延迟, 务必让各位看官仔仔细细看个明白
+        }, 60); // 故意延迟, 务必让各位看官仔仔细细看个明白
     }
     render() {
         return (

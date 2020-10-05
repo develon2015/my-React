@@ -1,5 +1,5 @@
 ﻿import css from './style.css';
-import Button from '../../components/Button';
+import Button from '@/components/Button';
 import Code from '@/components/Code';
 import { createElement, Component, } from 'react';
 

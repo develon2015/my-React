@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 import Tag from '@/components/Tag';
 
 const map_route = Pages.map((page, index) => (
-    <Link to={'./' + page} key={index}><Button>{page}</Button></Link>
+    <Link to={'/' + page} key={index}><Button>{page.replace(/^\/*part.*?\//, '')}</Button></Link>
 ));
 
 export default route => (
