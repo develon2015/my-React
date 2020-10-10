@@ -46,7 +46,6 @@ const CONFIG = {
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
-        'two.js': 'Two',
     },
     resolve: {
         extensions: ['.js', '.json'],

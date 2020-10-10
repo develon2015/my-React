@@ -1,20 +1,22 @@
 import { lazy } from "react";
 
-const part1 = ['Keyframes', 'WhatsJSX', 'useHistory', 'AsyncImport', 'font', 'FunctionComponent',
-    'AsyncComponent',
-    'Suspense',
-    'Suspense2',
-    'iframe',
-    'generateDownload',
-    'Button css class',
-];
-const part2 = [
+const parts = [
+    [
+        'Keyframes', 'WhatsJSX', 'useHistory', 'AsyncImport', 'font', 'FunctionComponent',
+        'AsyncComponent',
+        'Suspense',
+        'Suspense2',
+        'iframe',
+        'generateDownload',
+        'Button css class',
+    ],
+    [
+        'PDF',
+    ],
 ];
 
-const Pages = [
-    ...part1.map(it => `part-1/${it}`),
-    ...part2.map(it => `part-2/${it}`),
-];
+const Pages = [];
+parts.forEach((it, index) => Pages.push(...it.map(name => `part-${index + 1}/${name}`)));
 
 // const ReactPages = Pages.map(page => require(`@/pages/${page}`).default); // 臃肿的index.js
 
