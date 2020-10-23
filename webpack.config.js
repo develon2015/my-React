@@ -22,7 +22,7 @@ const CONFIG = {
             { test: /\.(html|png|jpg|ico)$/, use: 'file-loader?context=src&name=[path][name].[ext]' },
             // { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=@babel/env&presets[]=@babel/react' }, // Babel
             {
-                test: /\.js$/, exclude: /node_modules/, loader: {
+                test: /\.js$/, exclude: /node_modules/, use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/env', '@babel/react'],
