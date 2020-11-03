@@ -56,9 +56,9 @@ class Loadding extends Component {
 function Header() {
     const history = useHistory();
     return (
-        <div>
+        <div className={css.head}>
             <Title>
-                <div className={css.head} onClick={() => history.push("/")}>React Center</div>
+                <div onClick={() => history.push("/")}>React Center</div>
             </Title>
         </div>
     );
@@ -69,7 +69,7 @@ export default (
     <Router>
         <div className={css.app}>
             <Header />
-            <div>
+            <div className={css.body}>
                 <Switch>
                     {map_route}
                     <Route path="/">{Index}</Route>

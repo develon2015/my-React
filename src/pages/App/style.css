@@ -15,4 +15,9 @@ h1, h2, h3, h4, h5 {
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
+    height: 80px;
+    overflow: hidden;
+}
+.body {
+    height: calc(100vh - 80px);
 }

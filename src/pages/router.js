@@ -11,7 +11,7 @@ const parts = [
         'Button css class',
     ],
     [
-        'PDF',
+        'PDF', 'FileSelector',
     ],
 ];
 

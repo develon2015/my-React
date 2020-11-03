@@ -1,5 +1,5 @@
 {
-  "name": "my-React",
+  "name": "my-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,11 +20,13 @@
     "url": "https://github.com/develon2015/my-React/issues"
   },
   "homepage": "https://github.com/develon2015/my-React#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@react-pdf/renderer": "^1.6.12",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
@@ -36,8 +38,5 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-  },
-  "devDependencies": {
-    "@react-pdf/renderer": "^1.6.11"
   }
 }
